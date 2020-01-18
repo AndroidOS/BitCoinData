@@ -8,18 +8,26 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, BitcoinDataManagerDelegate {
+   
+    var dataManager = BitcoinDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dataManager.delegate = self
+        dataManager.fetchBitcoinData()
     }
 
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    func didUpdateBitcoin(prices: [String : Double]) {
+        print("didUpdateBitcoin")
+        print(prices)
     }
 
 

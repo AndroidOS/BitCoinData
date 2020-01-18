@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE744A6C23D3846000E6C304 /* BitCoinDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE744A6B23D3846000E6C304 /* BitCoinDataManager.swift */; };
 		BE750F9023D25FB600A4CBAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE750F8F23D25FB600A4CBAE /* AppDelegate.swift */; };
 		BE750F9223D25FB600A4CBAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE750F9123D25FB600A4CBAE /* ViewController.swift */; };
 		BE750F9523D25FB600A4CBAE /* BitCoinData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE750F9323D25FB600A4CBAE /* BitCoinData.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE744A6B23D3846000E6C304 /* BitCoinDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitCoinDataManager.swift; sourceTree = "<group>"; };
 		BE750F8C23D25FB600A4CBAE /* BitCoinData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitCoinData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE750F8F23D25FB600A4CBAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE750F9123D25FB600A4CBAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				BE750F9B23D25FB700A4CBAE /* Info.plist */,
 				BE750F9C23D25FB700A4CBAE /* BitCoinData.entitlements */,
 				BE750F9323D25FB600A4CBAE /* BitCoinData.xcdatamodeld */,
+				BE744A6B23D3846000E6C304 /* BitCoinDataManager.swift */,
 			);
 			path = BitCoinData;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE744A6C23D3846000E6C304 /* BitCoinDataManager.swift in Sources */,
 				BE750F9223D25FB600A4CBAE /* ViewController.swift in Sources */,
 				BE750F9523D25FB600A4CBAE /* BitCoinData.xcdatamodeld in Sources */,
 				BE750F9023D25FB600A4CBAE /* AppDelegate.swift in Sources */,
