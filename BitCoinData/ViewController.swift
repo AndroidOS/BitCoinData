@@ -12,6 +12,12 @@ class ViewController: NSViewController, BitcoinDataManagerDelegate {
    
     var dataManager = BitcoinDataManager()
 
+   
+    @IBOutlet weak var dataScrollView: NSScrollView!
+    
+    
+    @IBOutlet var dataTextView: NSTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,10 +32,22 @@ class ViewController: NSViewController, BitcoinDataManagerDelegate {
     }
     
     func didUpdateBitcoin(prices: [String : Double]) {
-        print("didUpdateBitcoin")
-        print(prices)
+        var labelText = ""
+        for (date, value) in prices {
+            //print("date is - \(date) and value is - \(value)\n")
+            labelText += "date is - \(date) and value is - \(value)\n"
+        }
+        //print(labelText)
+         DispatchQueue.main.async {
+            //textFieldOutlet.textStorage.mutableString.setString("Hello w0rld!")
+            //self.dataScrollView
+            self.dataTextView.string = labelText
+        }
     }
 
 
+    @IBAction func uploadFirebase(_ sender: NSButton) {
+        print("Upload button pressed.")
+    }
 }
 

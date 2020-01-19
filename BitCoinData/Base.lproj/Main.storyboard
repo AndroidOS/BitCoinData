@@ -709,21 +709,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l6W-mM-Tyb">
-                                <rect key="frame" x="18" y="234" width="444" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="ewh-V9-Z9L">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zs0-1Q-RPx">
+                                <rect key="frame" x="198" y="25" width="84" height="32"/>
+                                <buttonCell key="cell" type="push" title="Upload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xul-mK-kYn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="uploadFirebase:" target="XfG-lQ-9wD" id="1Yx-MJ-EFK"/>
+                                </connections>
+                            </button>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xQ-3t-Rve">
+                                <rect key="frame" x="20" y="73" width="440" height="177"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="9Tw-84-qYp">
+                                    <rect key="frame" x="0.0" y="0.0" width="440" height="177"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="gKk-T8-OkW">
+                                            <rect key="frame" x="0.0" y="0.0" width="440" height="177"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="440" height="177"/>
+                                            <size key="maxSize" width="450" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6xQ-3t-Rve" secondAttribute="height" multiplier="440:177" id="wlX-hp-CJP"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="wau-Me-C6v">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Fho-wU-Lm9">
+                                    <rect key="frame" x="424" y="0.0" width="16" height="177"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="l6W-mM-Tyb" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="RSQ-eg-PCa"/>
-                            <constraint firstItem="l6W-mM-Tyb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="sGO-2j-UHE"/>
-                            <constraint firstAttribute="trailing" secondItem="l6W-mM-Tyb" secondAttribute="trailing" constant="20" id="uZJ-d9-ahn"/>
+                            <constraint firstAttribute="trailing" secondItem="zs0-1Q-RPx" secondAttribute="trailing" constant="204" id="7xd-lu-1En"/>
+                            <constraint firstItem="zs0-1Q-RPx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="204" id="CZk-YT-C34"/>
+                            <constraint firstAttribute="trailing" secondItem="6xQ-3t-Rve" secondAttribute="trailing" constant="20" id="LKY-sv-whK"/>
+                            <constraint firstAttribute="bottom" secondItem="zs0-1Q-RPx" secondAttribute="bottom" constant="32" id="dS0-yd-Jiv"/>
+                            <constraint firstItem="6xQ-3t-Rve" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="nR0-lA-69g"/>
+                            <constraint firstItem="6xQ-3t-Rve" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="wFM-dS-ygM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataScrollView" destination="6xQ-3t-Rve" id="xen-6Z-BvI"/>
+                        <outlet property="dataTextView" destination="gKk-T8-OkW" id="jP0-Wk-x4t"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
