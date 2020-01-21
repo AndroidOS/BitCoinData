@@ -709,16 +709,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zs0-1Q-RPx">
-                                <rect key="frame" x="198" y="25" width="84" height="32"/>
-                                <buttonCell key="cell" type="push" title="Upload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xul-mK-kYn">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="uploadFirebase:" target="XfG-lQ-9wD" id="1Yx-MJ-EFK"/>
-                                </connections>
-                            </button>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xQ-3t-Rve">
                                 <rect key="frame" x="20" y="73" width="440" height="177"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="9Tw-84-qYp">
@@ -748,14 +738,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I9l-oG-ihN">
+                                <rect key="frame" x="391" y="19" width="70" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I9l-oG-ihN" secondAttribute="height" multiplier="58:21" id="cW8-Yb-MgV"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Load" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ug2-T2-kGK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="loadButton:" target="XfG-lQ-9wD" id="dPw-lQ-mci"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zs0-1Q-RPx">
+                                <rect key="frame" x="14" y="19" width="70" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zs0-1Q-RPx" secondAttribute="height" multiplier="58:21" id="XAp-Yk-ihH"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xul-mK-kYn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="saveButton:" target="XfG-lQ-9wD" id="LkI-rY-Slz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zs0-1Q-RPx" secondAttribute="trailing" constant="204" id="7xd-lu-1En"/>
-                            <constraint firstItem="zs0-1Q-RPx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="204" id="CZk-YT-C34"/>
+                            <constraint firstAttribute="bottom" secondItem="zs0-1Q-RPx" secondAttribute="bottom" constant="26" id="5ig-VR-nfn"/>
                             <constraint firstAttribute="trailing" secondItem="6xQ-3t-Rve" secondAttribute="trailing" constant="20" id="LKY-sv-whK"/>
-                            <constraint firstAttribute="bottom" secondItem="zs0-1Q-RPx" secondAttribute="bottom" constant="32" id="dS0-yd-Jiv"/>
+                            <constraint firstAttribute="bottom" secondItem="I9l-oG-ihN" secondAttribute="bottom" constant="26" id="id0-jf-C4v"/>
                             <constraint firstItem="6xQ-3t-Rve" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="nR0-lA-69g"/>
+                            <constraint firstItem="zs0-1Q-RPx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="qQd-RY-stg"/>
                             <constraint firstItem="6xQ-3t-Rve" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="wFM-dS-ygM"/>
+                            <constraint firstAttribute="trailing" secondItem="I9l-oG-ihN" secondAttribute="trailing" constant="25" id="y9g-hk-UMT"/>
                         </constraints>
                     </view>
                     <connections>

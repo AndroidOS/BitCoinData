@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CoreData
 
 class ViewController: NSViewController, BitcoinDataManagerDelegate {
    
@@ -18,11 +19,15 @@ class ViewController: NSViewController, BitcoinDataManagerDelegate {
     
     @IBOutlet var dataTextView: NSTextView!
     
+    let context = (NSApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dataManager.delegate = self
         dataManager.fetchBitcoinData()
+        
+        
     }
 
     override var representedObject: Any? {
@@ -36,6 +41,10 @@ class ViewController: NSViewController, BitcoinDataManagerDelegate {
         for (date, value) in prices {
             //print("date is - \(date) and value is - \(value)\n")
             labelText += "date is - \(date) and value is - \(value)\n"
+            var tmp = Price(context: context)
+            tmp.date = date
+            tmp.amount = value
+            save()
         }
         //print(labelText)
          DispatchQueue.main.async {
@@ -45,9 +54,21 @@ class ViewController: NSViewController, BitcoinDataManagerDelegate {
         }
     }
 
-
-    @IBAction func uploadFirebase(_ sender: NSButton) {
-        print("Upload button pressed.")
+    @IBAction func saveButton(_ sender: NSButton) {
+        save()
     }
+    
+    @IBAction func loadButton(_ sender: NSButton) {
+        print("download button pressed.")
+    }
+    
+    func save(){
+        do{
+                   try context.save()
+               } catch {
+                   print("Error saving context \(error)")
+               }
+    }
+    
 }
 
